@@ -1,4 +1,5 @@
-import ChartComponent from "./ChartComponent"; //import ChartComponent
+import React from "react"; //import react
+import ChartComponent from "./ChartComponent.jsx"; //import ChartComponent
 
 const LineChart = ({ data }) => { //define line chart data structure
     const lineChartData = {

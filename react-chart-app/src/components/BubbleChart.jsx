@@ -1,3 +1,6 @@
+import React from "react"; //import react
+import ChartComponent from "./ChartComponent.jsx"; //import ChartComponent
+
 const BubbleChart = ({ data }) => { //define bubble chart data structure
     const bubbleChartData = {
         datasets: [
