@@ -1,35 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from 'react'; //import React
+import BarChart from './components/BarChart'; //import BarChart
+import LineChart from './components/LineChart'; //import LineChart
+import ScatterChart from './components/ScatterChart'; //import ScatterChart
+import BubbleChart from './components/BubbleChart'; //import BubbleChart
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [chartData, setChartData] = useState(null); //chartData initialized to null
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+  useEffect(() => { //fetch financial data when component mounts
+      fetch('/financial_data.json') //retrieve json data
+          .then((response) => response.json()) //convert response to json format
+          .then((data) => setChartData(data)) //update ChartData with fetched data
+          .catch((error) => console.error('Fetching data error', error)); //handle errors
+  }, []);
 
-export default App
+    if (!chartData) { //if chartData is null
+        return <div>Loading...</div>; //return 'Loading...' message
+    }
+
+    return ( //return ChartData components for bar, line, scatter, and bubble chart
+        <div style={{ textAlign: 'center' }}>
+            <h1>Dynamic Charts with React and Chart.js</h1>
+            <BarChart data={barChartData} />
+            <LineChart data={lineChartData} />
+            <ScatterChart data={scatterChartData} />
+            <BubbleChart data={bubbleChartData} />
+        </div>
+    );
+};
