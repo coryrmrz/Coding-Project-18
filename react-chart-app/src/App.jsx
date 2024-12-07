@@ -21,10 +21,10 @@ const App = () => {
     return ( //return ChartData components for bar, line, scatter, and bubble chart
         <div style={{ textAlign: 'center' }}>
             <h1>Dynamic Charts with React and Chart.js</h1>
-            <BarChart data={ChartData} />
-            <LineChart data={ChartData} />
-            <ScatterChart data={ChartData} />
-            <BubbleChart data={ChartData} />
+            <BarChart data={chartData} />
+            <LineChart data={chartData} />
+            <ScatterChart data={chartData} />
+            <BubbleChart data={chartData} />
         </div>
     );
 };
