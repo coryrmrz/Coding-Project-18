@@ -2,9 +2,9 @@ import React from "react"; //import react
 import ChartComponent from "./ChartComponent.jsx"; //import ChartComponent
 
 const BarChart = ({ data }) => { //define data structure for bar chart
-    const barChartData = {
-        labels: data.months, //x-axis represents months
-        datasets: [
+    const barChartData = { 
+      labels: data.months, //x-axis represents months
+      datasets: [
             {
                 label: 'Monthly Sales', //data label
                 data: data.sales, //sales data y-axis
