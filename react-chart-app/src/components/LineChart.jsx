@@ -22,3 +22,4 @@ const LineChart = ({ data }) => { //define line chart data structure
     };
     return <ChartComponent type="line" data={lineChartData} options={lineChartOptions} />; //chart component with defined data and options
 };
+export default LineChart;

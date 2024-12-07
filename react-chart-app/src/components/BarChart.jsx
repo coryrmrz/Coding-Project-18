@@ -20,3 +20,4 @@ const BarChart = ({ data }) => { //define data structure for bar chart
     };
     return <ChartComponent type="bar" data={barChartData} options={barChartOptions} />; //chart component with defined data and options
 };
+export default BarChart;

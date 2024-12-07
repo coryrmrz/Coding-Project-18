@@ -13,3 +13,4 @@ const ScatterChart = ({ data }) => { //scatter chart data structure
     };
     return <ChartComponent type="scatter" data={scatterChartData} />; //chart component with defined data and options
 };
+export default ScatterChart;
